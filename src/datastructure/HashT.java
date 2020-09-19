@@ -11,9 +11,9 @@ public class HashT <K,V> implements IHashT<K,V> {
 	}
 
 	@Override
-	public int hashFunction(int hashCode) {
+	public int hashFunction(int htCode) {
 		// TODO Auto-generated method stub
-		int code=hashCode%length;
+		int code=htCode%length;
 		
 		if(code<0)
 			code=code*(-1);

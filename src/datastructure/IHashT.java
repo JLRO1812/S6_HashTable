@@ -2,7 +2,7 @@ package datastructure;
 
 public interface IHashT <K,V> {
 	
-	public int hashFunction(int hashCode);
+	public int hashFunction(int htCode);
 	
 	public void add(K key, V value); 
 	
