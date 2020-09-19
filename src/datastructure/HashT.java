@@ -28,7 +28,7 @@ public class HashT <K,V> implements IHashT<K,V> {
 		HashNode<K,V>node=new HashNode<K,V>(value,key);
 		if(array.get(function)!=null) {
 			HashNode<K,V> aux=array.get(function);
-			aux.setPrev(node);
+			aux.setPrevious(node);
 		}else {
 			array.set(function, node);
 		}

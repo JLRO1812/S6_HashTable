@@ -4,13 +4,13 @@ public class HashNode <K,V>{
 	
 	private V value;
 	private K key;
-	private HashNode<K,V>prev;
+	private HashNode<K,V>previous;
 	private HashNode<K,V>next;
 	
 	public HashNode(V value, K key) {
 		this.value = value;
 		this.key = key;
-		prev = null;
+		previous = null;
 		next = null;
 	}
 
@@ -30,12 +30,12 @@ public class HashNode <K,V>{
 		this.key = key;
 	}
 
-	public HashNode<K, V> getPrev() {
-		return prev;
+	public HashNode<K, V> getPrevious() {
+		return previous;
 	}
 
-	public void setPrev(HashNode<K, V> prev) {
-		this.prev = prev;
+	public void setPrevious(HashNode<K, V> prev) {
+		this.previous = prev;
 	}
 
 	public HashNode<K, V> getNext() {

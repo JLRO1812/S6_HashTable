@@ -22,8 +22,42 @@ public class Array <K,V>{
 	}
 	
 	public boolean delete(int i, K key) {
-		///Pendiente
-		return false;
+		boolean check = false;
+		
+		if(array[i]!=null) {
+			HashNode<K,V> aux = array[i];
+			
+			if(aux.getKey().equals(key)) {
+				if(aux.getNext()!=null) {
+					array[i]=array[i].getNext();
+					aux.getNext().setPrevious(null);
+					counter--;
+				}else {
+					array[i]=null;
+					counter--;
+					return true;
+				}
+			}else {
+				while(aux.getNext()!=null&&!check) {
+					if(aux.getKey().equals(key)) {
+						check=true;
+					}else {
+						check=false;
+					}aux=aux.getNext();
+				}
+				
+				if(check==true) {
+					if(aux.getNext()!=null) {
+						aux.getPrevious().setNext(aux.getNext());
+						aux.getNext().setPrevious(aux.getPrevious());
+						counter--;
+					}else {
+						aux.getPrevious().setNext(null);
+						counter--;					
+					}
+				}
+			}
+		}return check;
 	}
 	
 	public HashNode<K,V>get(int i){
